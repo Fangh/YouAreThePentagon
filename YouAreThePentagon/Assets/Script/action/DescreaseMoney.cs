@@ -5,7 +5,7 @@ public class DescreaseMoney : Action {
 
     public int amount = 5;
     public Money money;
-    public bool desactiveAfter = true;
+
     // Use this for initialization
     void Start()
     {
@@ -18,10 +18,8 @@ public class DescreaseMoney : Action {
 
     }
 
-    override public void run(TriggerAction trigger)
+    override public void Run(TriggerAction trigger)
     {
         money.decreaseMoney(amount);
-        if (desactiveAfter && trigger != null)
-            trigger.active = false;
     }
 }

@@ -42,7 +42,6 @@ public class DisplayInteractionPopup : MonoBehaviour {
     {
         if (collider.gameObject.tag == "Player")
         {
-            print("Player enter in trigger");
             setVisible();
         }
     }
