@@ -22,7 +22,7 @@ public class MovePlayer : MonoBehaviour {
         transform.Rotate(new Vector3(0, direction.z, 0) * rotSpeed * Time.deltaTime);
         direction.z = 0;
         Vector3 oldPosition = transform.position; // Retreive the old position
-        Vector3 newPosition = transform.position + (direction * speed) * Time.deltaTime;
+        Vector3 newPosition = transform.position + (transform.forward * direction.x * speed) * Time.deltaTime;
 
         transform.position = newPosition;
 
