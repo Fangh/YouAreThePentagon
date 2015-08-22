@@ -19,7 +19,12 @@ public class MovePlayer : MonoBehaviour {
     public Vector3 move(Vector3 direction)
     {
         print("Test: " + direction);
-        transform.Rotate(new Vector3(0, direction.z, 0) * rotSpeed * Time.deltaTime);
+        Vector3 angle = new Vector3(0, 0, 0);
+        if (direction.z > 0)
+            angle.y = 90;
+        else if (direction.z < 0)
+            angle.y = -90;
+        transform.Rotate(angle);
         direction.z = 0;
         Vector3 oldPosition = transform.position; // Retreive the old position
         Vector3 newPosition = transform.position + (transform.forward * direction.x * speed) * Time.deltaTime;
