@@ -45,6 +45,8 @@ public class DialogAction : Action
 		dialogPanel.transform.GetChild (0).GetChild (0).GetComponent<Text> ().text = characterName;
 		textTween = dialogPanel.transform.GetChild (0).GetChild (1).GetComponent<Text> ().DOText (
 			text, 2f, true, ScrambleMode.None, null);
+	    if (desactiveAfter)
+	        active = true;
 	}
 
 	void Stop()

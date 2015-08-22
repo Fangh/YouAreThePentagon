@@ -8,7 +8,10 @@ public class AddLife : Action {
     // Use this for initialization
     void Start()
     {
-
+        if (!life)
+        {
+            life = GameObject.FindGameObjectWithTag("Player").GetComponent<Life>();
+        }
     }
 
     // Update is called once per frame

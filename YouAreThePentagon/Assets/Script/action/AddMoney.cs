@@ -7,8 +7,12 @@ public class AddMoney : Action {
     public Money money;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        if (!money)
+        {
+            money = GameObject.FindGameObjectWithTag("Player").GetComponent<Money>();
+        }
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,6 +21,7 @@ public class AddMoney : Action {
 
     override public void Run(TriggerAction trigger)
     {
+        print("Add money");
         money.addMoney(amount);
     }
 }
