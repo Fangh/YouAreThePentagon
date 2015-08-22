@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Money : MonoBehaviour {
+public class Money : DisplayedValue {
 
     public int money = 10;
     public int maxMoney = 6000;
@@ -12,6 +12,11 @@ public class Money : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	}
+
+    override public int value()
+    {
+        return money;
+    }
 	
     public int addMoney(int amount)
     {

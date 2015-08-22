@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Life : MonoBehaviour {
+public class Life : DisplayedValue {
 
     public int life = 10;
     public int maxLife = 10;
@@ -13,7 +13,12 @@ public class Life : MonoBehaviour {
     void Start () {
 	
 	}
-	
+
+    override public int value()
+    {
+        return life;
+    }
+
     void hit(int damage)
     {
         life -= damage;
