@@ -377,6 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desactiveAfter: 1
   active: 1
+  probability: 1
   question: 0
   dialogPanel: {fileID: 0}
   characterName: Charles V
@@ -1487,6 +1488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValidDistance: .200000003
+  LowBoundWaitTime: 2
+  HighBoundWaitTime: 10
 --- !u!114 &717048913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2429,48 +2432,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 415536, guid: 7f2ba8bf7171ac94ea4dca53474579c9, type: 2}
   m_PrefabInternal: {fileID: 1198083656}
---- !u!1001 &1334356883
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -38
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1401209320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,6 +2497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desactiveAfter: 0
   active: 1
+  probability: 1
   question: 1
   dialogPanel: {fileID: 0}
   characterName: Shoes Seller
@@ -3094,6 +3056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValidDistance: .200000003
+  LowBoundWaitTime: 2
+  HighBoundWaitTime: 10
 --- !u!23 &1608840283
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3591,6 +3555,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1829156596}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1836174952
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -38
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498616, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ac25aa7029db3c14a82aefc468c07910, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1836498431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,6 +3642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValidDistance: .200000003
+  LowBoundWaitTime: 2
+  HighBoundWaitTime: 10
 --- !u!114 &1836498434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,6 +3911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValidDistance: .200000003
+  LowBoundWaitTime: 2
+  HighBoundWaitTime: 10
 --- !u!114 &2108830922
 MonoBehaviour:
   m_ObjectHideFlags: 0

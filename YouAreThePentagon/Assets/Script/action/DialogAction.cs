@@ -47,6 +47,9 @@ public class DialogAction : Action
 
 		if(question)
 			dialogPanel.transform.GetChild (1).gameObject.SetActive (true);
+
+		if (desactiveAfter)
+			active = true;
 	}
 
 	void Stop()
