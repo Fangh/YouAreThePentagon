@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public abstract class Action : MonoBehaviour {
 
     public bool desactiveAfter = true;
     public bool active = true;
+    public float probability = 1.0f;
     // Use this for initialization
     void Start () {
 	
@@ -22,10 +24,14 @@ public abstract class Action : MonoBehaviour {
 
     public void Launch(TriggerAction trigger = null)
     {
-        if (active)
+        float r = (float)Math.Round(UnityEngine.Random.Range(0.0f, 1.0f), 1);
+        print("Try to do action with probability: " + r + ", prob " + probability + ", activate ? " + (r <= probability));
+        if (active && r <= probability)
+        {
+            if (desactiveAfter)
+                active = false;
             Run(trigger);
-        if (desactiveAfter)
-            active = false;
+        }
     }
 
     abstract public void Run(TriggerAction trigger = null);

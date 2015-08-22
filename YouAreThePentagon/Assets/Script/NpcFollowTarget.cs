@@ -5,9 +5,14 @@ using System.Collections;
 public class NpcFollowTarget : MonoBehaviour
 {
     public float ValidDistance;
+    public float LowBoundWaitTime = 2f;
+    public float HighBoundWaitTime = 10f;
+
     private GameObject[] _targets;
     private GameObject _actualTarget;
     private NPCBehavior _behavior;
+    private float _accumulator = 0.0f;
+    private bool _reachTarget;
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,9 +30,19 @@ public class NpcFollowTarget : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () {
-	    if (Vector3.Distance(transform.position, _actualTarget.transform.position) <= ValidDistance)
+	void Update ()
+	{
+	    _accumulator -= Time.deltaTime;
+	    if (_accumulator < 0f)
+	        _accumulator = 0f;
+	    if (!_reachTarget && Vector3.Distance(transform.position, _actualTarget.transform.position) <= ValidDistance)
 	    {
+	        _reachTarget = true;
+	        _accumulator = UnityEngine.Random.Range(LowBoundWaitTime, HighBoundWaitTime);
+	    }
+	    if (_reachTarget && Math.Abs(_accumulator) < 0.1f)
+	    {
+	        _reachTarget = false;
 	        _actualTarget = GetNextTarget();
 	    }
 	    _behavior.target = _actualTarget.transform;
