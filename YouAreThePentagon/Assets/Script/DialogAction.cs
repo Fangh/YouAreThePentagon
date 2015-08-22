@@ -9,6 +9,7 @@ public class DialogAction : MonoBehaviour
 	public string characterName;
 	[TextArea(3,10)]
 	public string text;
+	Tweener textTween;
 
 	bool isRunning = false;
 
@@ -36,16 +37,17 @@ public class DialogAction : MonoBehaviour
 		GameObject.FindWithTag ("Player").GetComponent<MovePlayer>().canMove = false;
 		dialogPanel.transform.GetChild (0).gameObject.SetActive (true);
 		dialogPanel.transform.GetChild (0).GetChild (0).GetComponent<Text> ().text = characterName;
-		dialogPanel.transform.GetChild (0).GetChild (1).GetComponent<Text> ().DOText (
+		textTween = dialogPanel.transform.GetChild (0).GetChild (1).GetComponent<Text> ().DOText (
 			text, 2f, true, ScrambleMode.None, null);
 	}
 
 	void Stop()
 	{
 		isRunning = false;
+		textTween.Kill ();
 		GameObject.FindWithTag ("Player").GetComponent<MovePlayer>().canMove = true;
-		dialogPanel.transform.GetChild (0).gameObject.SetActive (false);
 		dialogPanel.transform.GetChild (0).GetChild (0).GetComponent<Text> ().text = "";
 		dialogPanel.transform.GetChild (0).GetChild (1).GetComponent<Text> ().text = "";
+		dialogPanel.transform.GetChild (0).gameObject.SetActive (false);
 	}
 }
