@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .0666666701
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: 867037f9d2bb842429897bcf8a740e87, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a7d3499109300c84fb2e6edddece2ac9, type: 2}
 --- !u!1 &40859731
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +674,7 @@ GameObject:
   - 64: {fileID: 329221651}
   - 114: {fileID: 329221653}
   - 114: {fileID: 329221652}
+  - 208: {fileID: 329221654}
   m_Layer: 0
   m_Name: Pentagon
   m_TagString: Player
@@ -800,6 +801,21 @@ MonoBehaviour:
   decreaseRate: 0
   decreaseAmount: 0
   modificationIntervalTime: .600000024
+--- !u!208 &329221654
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 329221645}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: .604000032, y: .0670000017, z: .574000001}
+  m_MoveThreshold: .100000001
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: .0560000017, y: 0, z: .574000001}
+  m_TimeToStationary: .5
 --- !u!1001 &329525416
 Prefab:
   m_ObjectHideFlags: 0
@@ -3015,7 +3031,6 @@ GameObject:
   - 65: {fileID: 1608840284}
   - 23: {fileID: 1608840283}
   - 195: {fileID: 1608840281}
-  - 114: {fileID: 1608840287}
   - 114: {fileID: 1608840282}
   m_Layer: 0
   m_Name: NPC
@@ -3113,18 +3128,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 40859732}
   m_RootOrder: 0
---- !u!114 &1608840287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1608840280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d9d8ceb85845be46b9ffd17a9aa9112, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1511401495}
 --- !u!1 &1633047576
 GameObject:
   m_ObjectHideFlags: 0

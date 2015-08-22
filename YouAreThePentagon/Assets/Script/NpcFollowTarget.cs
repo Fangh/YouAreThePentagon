@@ -10,14 +10,12 @@ public class NpcFollowTarget : MonoBehaviour
 
     private GameObject[] _targets;
     private GameObject _actualTarget;
-    private NPCBehavior _behavior;
     private float _accumulator = 0.0f;
     private bool _reachTarget;
 	// Use this for initialization
 	void Start ()
 	{
 	    _targets = GameObject.FindGameObjectsWithTag("NPCTarget");
-	    _behavior = gameObject.GetComponent<NPCBehavior>();
 	    _actualTarget = GetNextTarget();
 	}
 
@@ -45,6 +43,6 @@ public class NpcFollowTarget : MonoBehaviour
 	        _reachTarget = false;
 	        _actualTarget = GetNextTarget();
 	    }
-	    _behavior.target = _actualTarget.transform;
+		GetComponent<NavMeshAgent> ().SetDestination (_actualTarget.transform.position); 
 	}
 }
