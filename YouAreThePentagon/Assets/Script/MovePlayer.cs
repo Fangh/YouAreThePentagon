@@ -6,9 +6,6 @@ public class MovePlayer : MonoBehaviour {
     // Speed of the player
     public float speed = 10f;
     public float rotSpeed = 100f;
-    // State of the player. If the player colide with something, set it to true
-    private bool collide = false;
-
 	public bool canMove = true;
 
 	// Use this for initialization
