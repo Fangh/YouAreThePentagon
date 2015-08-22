@@ -29,6 +29,7 @@ public class DisplayInteractionPopup : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         popup.color = Color.Lerp(popup.color, targetColor, transitionSpeed * Time.deltaTime);
+		popup.transform.LookAt (Camera.main.transform.position);
 	}
 
     void OnTriggerEnter(Collider collider)
