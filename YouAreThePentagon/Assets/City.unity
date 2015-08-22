@@ -101,6 +101,8 @@ GameObject:
   - 135: {fileID: 137163325}
   - 114: {fileID: 137163324}
   - 114: {fileID: 137163330}
+  - 114: {fileID: 137163332}
+  - 114: {fileID: 137163331}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -206,6 +208,33 @@ MonoBehaviour:
     want bananaaa! Bee do bee do bee do po kass poopayee butt jeje baboiii. Butt baboiii
     potatoooo tank yuuu! Tulaliloo tulaliloo jeje poopayee belloo! Belloo! Gelatooo
     jiji para t\xFA."
+--- !u!114 &137163331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137163323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fa1f4cbabcdfc499d2fb2860cb27e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 5
+  money: {fileID: 329221653}
+  desactiveAfter: 1
+--- !u!114 &137163332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137163323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5643e8f0cbc75848a054619de09d22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 137163331}
+  active: 1
 --- !u!1 &148850971
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1145258391
 RectTransform:
   m_ObjectHideFlags: 0
