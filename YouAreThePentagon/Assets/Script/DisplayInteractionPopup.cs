@@ -35,6 +35,7 @@ public class DisplayInteractionPopup : MonoBehaviour {
             setInvisible();
         }
         popup.color = Color.Lerp(popup.color, targetColor, transitionSpeed * Time.deltaTime);
+		popup.transform.LookAt (Camera.main.transform.position);
 	}
 
     void OnTriggerEnter(Collider collider)
