@@ -16,22 +16,10 @@ public class MovePlayer : MonoBehaviour {
 	
     // Move the player to direction
     // return the newPosition
-    public Vector3 move(Vector3 direction)
+    public void move(Vector3 direction, Vector3 rotation)
     {
-        print("Test: " + direction);
-        Vector3 angle = new Vector3(0, 0, 0);
-        if (direction.z > 0)
-            angle.y = 90;
-        else if (direction.z < 0)
-            angle.y = -90;
-        transform.Rotate(angle);
-        direction.z = 0;
-        Vector3 oldPosition = transform.position; // Retreive the old position
-        Vector3 newPosition = transform.position + (transform.forward * direction.x * speed) * Time.deltaTime;
-
-        transform.position = newPosition;
-
-        return newPosition;
+        transform.Rotate(rotation * rotSpeed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime, Space.Self);
     }
 
     // Update is called once per frame
@@ -39,8 +27,9 @@ public class MovePlayer : MonoBehaviour {
         float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 
-		transform.Rotate(new Vector3(0, h, 0) * rotSpeed * Time.deltaTime);
-		transform.Translate(0, 0, v * speed * Time.deltaTime, Space.Self );
+        move(new Vector3(0, 0, v), new Vector3(0, h, 0));
+//		transform.Rotate(new Vector3(0, h, 0) * rotSpeed * Time.deltaTime);
+//		transform.Translate(0, 0, v * speed * Time.deltaTime, Space.Self );
 
 //
 //        Vector3 direction = new Vector3(x, y, z);
