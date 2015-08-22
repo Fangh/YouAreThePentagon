@@ -18,10 +18,12 @@ public class TriggerAction : MonoBehaviour {
 	void Update () {
         accumulatorInterval -= Time.deltaTime;
 	    if (playerInTrigger && Input.GetButton("Fire1") && accumulatorInterval <= 0.1f)
-        {
+		{
             bool allActionInactive = true;
             foreach (Action action in actions)
-            {
+			{
+				if(GetComponent<Animator>())
+					GetComponent<Animator>().SetTrigger("Go");
                 action.Launch(this);
                 if (action.active)
                     allActionInactive = false;
