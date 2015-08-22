@@ -9,12 +9,14 @@ public class DisplayInteractionPopup : MonoBehaviour {
 
     private Color normalColor;
     private Color targetColor;
+    private TriggerAction trigger;
 
 	// Use this for initialization
 	void Start () {
         normalColor = popup.color;
         popup.color = new Color(normalColor.r, normalColor.g, normalColor.b, 0);
-	}
+        trigger = gameObject.GetComponent<TriggerAction>();
+    }
 
     private void setInvisible()
     {
@@ -28,6 +30,10 @@ public class DisplayInteractionPopup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (trigger != null && trigger.active == false)
+        {
+            setInvisible();
+        }
         popup.color = Color.Lerp(popup.color, targetColor, transitionSpeed * Time.deltaTime);
 		popup.transform.LookAt (Camera.main.transform.position);
 	}

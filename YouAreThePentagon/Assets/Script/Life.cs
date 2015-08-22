@@ -19,14 +19,14 @@ public class Life : DisplayedValue {
         return life;
     }
 
-    void hit(int damage)
+    public void hit(int damage)
     {
         life -= damage;
         if (life < 0)
             life = 0;
     }
 
-    void heal(int heal)
+    public void heal(int heal)
     {
         life += heal;
         if (life > maxLife)
