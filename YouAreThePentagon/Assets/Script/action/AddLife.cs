@@ -5,7 +5,6 @@ public class AddLife : Action {
 
     public int amount = 5;
     public Life life;
-    public bool desactiveAfter = true;
     // Use this for initialization
     void Start()
     {
@@ -18,10 +17,8 @@ public class AddLife : Action {
 
     }
 
-    override public void run(TriggerAction trigger)
+    override public void Run(TriggerAction trigger)
     {
         life.heal(amount);
-        if (desactiveAfter && trigger != null)
-            trigger.active = false;
     }
 }

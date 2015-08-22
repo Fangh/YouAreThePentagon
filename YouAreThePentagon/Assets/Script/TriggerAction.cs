@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TriggerAction : MonoBehaviour {
 
-    public Action action;
+    public Action[] actions;
     public bool active = true;
 
     private bool playerInTrigger = false;
@@ -14,9 +14,17 @@ public class TriggerAction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (active && playerInTrigger && Input.GetButton("Fire1"))
+	    if (playerInTrigger && Input.GetButton("Fire1"))
         {
-            action.run(this);
+            bool allActionInactive = true;
+            foreach (Action action in actions)
+            {
+                action.Launch(this);
+                if (action.active)
+                    allActionInactive = false;
+            }
+            if (allActionInactive)
+                active = false;
         }
 	}
 
