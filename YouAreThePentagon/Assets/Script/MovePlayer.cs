@@ -4,8 +4,8 @@ using System.Collections;
 public class MovePlayer : MonoBehaviour {
 
     // Speed of the player
-    public float speed = 1f;
-    public float rotSpeed = 1f;
+    public float speed = 10f;
+    public float rotSpeed = 100f;
     // State of the player. If the player colide with something, set it to true
     private bool collide = false;
 
@@ -31,12 +31,15 @@ public class MovePlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        float z = Input.GetAxis("Horizontal");
-        float x = Input.GetAxis("Vertical");
-        float y = 0;
+        float h = Input.GetAxis("Horizontal");
+		float v = Input.GetAxis("Vertical");
 
-        Vector3 direction = new Vector3(x, y, z);
+		transform.Rotate(new Vector3(0, h, 0) * rotSpeed * Time.deltaTime);
+		transform.Translate(0, 0, v * speed * Time.deltaTime, Space.Self );
 
-        move(direction);
+//
+//        Vector3 direction = new Vector3(x, y, z);
+
+//        move(direction);
 	}
 }
