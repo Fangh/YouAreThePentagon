@@ -290,6 +290,7 @@ MonoBehaviour:
   desactiveAfter: 1
   active: 1
   probability: 1
+  question: 0
   dialogPanel: {fileID: 0}
   characterName: Charles V
   text: "bananaaaa poulet tikka masala tulaliloo me want bananaaa! Pepete butt me
@@ -3680,15 +3681,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 432618, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.28399992
+      value: -5.82000017
       objectReference: {fileID: 0}
     - target: {fileID: 432618, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .25
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 432618, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.57599998
+      value: 2.95000005
       objectReference: {fileID: 0}
     - target: {fileID: 432618, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3709,10 +3710,6 @@ Prefab:
     - target: {fileID: 432618, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 432416, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb83c72c5e34e4c4189fc4c784305af4, type: 2}

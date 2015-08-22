@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .0666666701
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: 867037f9d2bb842429897bcf8a740e87, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0886cb997cf415648b9c9e85f3a0b5ba, type: 2}
 --- !u!1 &40859731
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desactiveAfter: 1
   active: 1
+  probability: 1
+  question: 0
   dialogPanel: {fileID: 0}
   characterName: Charles V
   text: "bananaaaa poulet tikka masala tulaliloo me want bananaaa! Pepete butt me
@@ -4539,6 +4541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ValidDistance: .200000003
+  LowBoundWaitTime: 2
+  HighBoundWaitTime: 10
 --- !u!23 &1608840283
 MeshRenderer:
   m_ObjectHideFlags: 0
