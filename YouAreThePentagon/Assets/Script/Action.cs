@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Action : MonoBehaviour {
+public abstract class Action : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +12,6 @@ public class Action : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    abstract public void run(TriggerAction trigger = null);
 }
