@@ -8,7 +8,9 @@ public class DescreaseMoney : Action {
 
     // Use this for initialization
     void Start()
-    {
+	{
+		if (!money)
+			money = GameObject.FindGameObjectWithTag ("Player").GetComponent<Money>();
 
     }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InGameUi
   - DialogPanel
+  - NPCTarget
   layers:
   - Default
   - TransparentFX
