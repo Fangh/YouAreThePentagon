@@ -7,7 +7,9 @@ public class DescreaseLife : Action {
     public Life life;
     // Use this for initialization
     void Start()
-    {
+	{
+		if (!life)
+			life = GameObject.FindGameObjectWithTag ("Player").GetComponent<Life>();
 
     }
 

@@ -4,10 +4,12 @@ using DG.Tweening;
 
 public class DialogAction : Action
 {
+	public bool question;
 	public GameObject dialogPanel;
 	public string characterName;
 	[TextArea(3,10)]
 	public string text;
+
 
 	bool isRunning = false;
     private Tweener textTween;
@@ -26,10 +28,7 @@ public class DialogAction : Action
 	// Update is called once per frame
 	void Update () 
 	{
-		/*if (Input.GetKeyUp (KeyCode.Space) && !isRunning)
-			Run (null);
-		else if (Input.GetKeyUp (KeyCode.Space) && isRunning)
-			Stop ();*/
+
 	}
 
 	override public void Run(TriggerAction trigger)
@@ -45,6 +44,12 @@ public class DialogAction : Action
 		dialogPanel.transform.GetChild (0).GetChild (0).GetComponent<Text> ().text = characterName;
 		textTween = dialogPanel.transform.GetChild (0).GetChild (1).GetComponent<Text> ().DOText (
 			text, 2f, true, ScrambleMode.None, null);
+
+		if(question)
+			dialogPanel.transform.GetChild (1).gameObject.SetActive (true);
+
+		if (desactiveAfter)
+			active = true;
 	}
 
 	void Stop()
@@ -55,5 +60,8 @@ public class DialogAction : Action
 		dialogPanel.transform.GetChild (0).gameObject.SetActive (false);
 		dialogPanel.transform.GetChild (0).GetChild (0).GetComponent<Text> ().text = "";
 		dialogPanel.transform.GetChild (0).GetChild (1).GetComponent<Text> ().text = "";
+
+		if(question)
+			dialogPanel.transform.GetChild (1).gameObject.SetActive (false);
 	}
 }

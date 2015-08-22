@@ -6,7 +6,11 @@ public class AddMoney : Action {
     public int amount = 5;
     public Money money;
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		if (!money)
+			money = GameObject.FindGameObjectWithTag ("Player").GetComponent<Money>();
+			
 	
 	}
 	
