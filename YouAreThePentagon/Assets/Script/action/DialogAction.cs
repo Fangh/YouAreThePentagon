@@ -52,8 +52,15 @@ public class DialogAction : Action
 			active = true;
 	}
 
+    public bool IsRunning()
+    {
+        return isRunning;
+    }
+
 	void Stop()
 	{
+	    if (isRunning == false)
+	        return;
 		isRunning = false;
         textTween.Kill();
 		GameObject.FindWithTag ("Player").GetComponent<MovePlayer>().canMove = true;
